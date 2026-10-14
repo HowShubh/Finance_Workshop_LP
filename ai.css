@@ -1,0 +1,373 @@
+/* ===========================================================
+   AI for Content Creation — additions on top of home.css.
+
+   home.css is the Content Creation page's stylesheet, used as-is so
+   the two workshops read as one family. Everything this page needs
+   that the other one does not lives here: the bonus strip, a single
+   host photographed (not cut out) inside the hero arch, a fourth
+   bonus card, and the CaptionGen art.
+   =========================================================== */
+
+/* ---------- Bonus strip, above the bar ---------- */
+
+.lp-strip {
+  display: block;
+  padding: 10px 16px;
+  background: var(--volt);
+  color: var(--on-volt);
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--mn);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.lp-strip b {
+  display: inline-block;
+  margin: 0 2px;
+  padding: 1px 7px;
+  border-radius: 5px;
+  background: var(--on-volt);
+  color: var(--volt);
+}
+.lp-strip u { text-underline-offset: 3px; }
+
+.lp-flag .lp-live-dot {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 50%;
+  background: #e5322d;
+  box-shadow: 0 0 0 0 rgba(229, 50, 45, 0.6);
+  animation: lp-live 1.8s infinite;
+}
+@keyframes lp-live {
+  70% { box-shadow: 0 0 0 8px rgba(229, 50, 45, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(229, 50, 45, 0); }
+}
+
+/* The nav's date gets the same red dot. */
+.lp-nav-date .lp-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e5322d;
+}
+
+/* ---------- FREE, louder ---------- */
+
+.lp-bonus .lp-head em {
+  display: inline-block;
+  padding: 0 0.18em;
+  border-radius: 0.14em;
+  background: var(--volt);
+  color: var(--on-volt);
+  transform: rotate(-2deg);
+}
+
+.lp-bonus-sub {
+  margin: 0;
+  max-width: 560px;
+  font-size: 16px;
+  color: var(--fg-2);
+}
+.lp-bonus-sub b { color: var(--volt); }
+
+.lp-bonus-art { position: relative; }
+
+.lp-free-tag {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 12px;
+  padding: 7px 11px;
+  border-radius: 8px;
+  background: var(--volt);
+  color: var(--on-volt);
+  font-family: var(--mn);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  transform: rotate(4deg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.lp-bonus-card .lp-price b {
+  padding: 6px 13px;
+  border: 0;
+  background: var(--volt);
+  color: var(--on-volt);
+  font-size: 12.5px;
+}
+
+.lp-new {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #e5322d;
+  color: #fff;
+  font-family: var(--mn);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+
+/* Four cards, not three. */
+.lp-bonus-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lp-bonus-card.is-new { border-color: rgba(var(--glow), 0.45); }
+
+
+@media (max-width: 860px) {
+  .lp-bonus-grid { grid-template-columns: minmax(0, 1fr); }
+  .lp-free-tag { top: 8px; right: auto; left: 8px; padding: 5px 8px; font-size: 10px; }
+}
+
+/* ---------- CaptionGen art ----------
+
+   No product shot yet, so the card draws one: a phone on a warm
+   gradient, playing a caption word by word. ai.js cycles the words
+   and the style. */
+
+.lp-cg-art {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.25), transparent 50%),
+    linear-gradient(140deg, #ff5a36, #ff9a3d 55%, #ffd84d);
+}
+
+.lp-cg-phone {
+  position: relative;
+  width: 44%;
+  aspect-ratio: 9 / 16;
+  padding: 5px;
+  border-radius: 18px;
+  background: #0b0f14;
+  box-shadow: 0 24px 40px rgba(60, 20, 0, 0.45);
+  transform: rotate(4deg);
+}
+
+.lp-cg-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #1b2630 url(assets/home/cg-kavya.webp) 50% 20% / cover no-repeat;
+}
+.lp-cg-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 38%, rgba(0, 0, 0, 0.78) 72%);
+}
+
+.lp-cg-cap {
+  position: absolute;
+  z-index: 1;
+  left: 6px;
+  right: 6px;
+  bottom: 18%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 2px 4px;
+  min-height: 44px;
+  text-align: center;
+}
+.lp-cg-cap .w { opacity: 0.4; transition: all 0.15s ease; }
+.lp-cg-cap .w.on { opacity: 1; }
+
+.lp-cg-cap.s-pop .w {
+  font: 800 clamp(11px, 1.3vw, 15px)/1.05 var(--dis);
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-text-stroke: 1px #000;
+  paint-order: stroke fill;
+  text-shadow: 0 2px 0 #000;
+}
+.lp-cg-cap.s-pop .w.on { color: var(--volt); transform: scale(1.12) rotate(-2deg); }
+
+.lp-cg-cap.s-karaoke .w {
+  padding: 1px 3px;
+  border-radius: 3px;
+  font: 800 clamp(10px, 1.2vw, 13px)/1.15 var(--ui);
+  color: #fff;
+}
+.lp-cg-cap.s-karaoke .w.on { background: #7c3aed; }
+
+.lp-cg-cap.s-neon .w {
+  font: italic 700 clamp(11px, 1.3vw, 14px)/1.1 var(--dis);
+  color: #fff;
+  text-shadow: 0 0 4px #22d3ee, 0 0 10px #22d3ee;
+}
+.lp-cg-cap.s-neon .w.on { color: #fbcfe8; text-shadow: 0 0 5px #f0abfc, 0 0 14px #e879f9; }
+
+.lp-cg-style {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 7%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-family: var(--mn);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .lp-cg-phone { width: 52%; border-radius: 12px; padding: 3px; }
+  .lp-cg-screen { border-radius: 10px; }
+  .lp-cg-cap { min-height: 30px; bottom: 16%; }
+  .lp-cg-cap.s-pop .w, .lp-cg-cap.s-neon .w { font-size: 9px; }
+  .lp-cg-cap.s-karaoke .w { font-size: 8.5px; }
+  .lp-cg-style { font-size: 8px; padding: 3px 7px; bottom: 5%; }
+}
+
+@media (max-width: 560px) {
+  .lp-strip { font-size: 10.5px; letter-spacing: 0.06em; padding: 9px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-flag .lp-live-dot { animation: none; }
+}
+
+/* The top strip links here; land under the sticky bar. */
+#bonuses { scroll-margin-top: calc(var(--nav-h) + 8px); }
+
+/* ---------- Featured bonus: CaptionGen ----------
+
+   Sits full width above the other three so it is the first bonus
+   anyone sees: art on the left, pitch on the right, with a
+   gradient border and a soft glow in the action colour. */
+
+.lp-cg-feature {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  border-radius: 24px;
+  background:
+    linear-gradient(var(--night-2), var(--night-2)) padding-box,
+    linear-gradient(135deg, var(--volt), #ff8a3d 55%, #ffd84d) border-box;
+  box-shadow: 0 24px 60px rgba(var(--glow), 0.18);
+  overflow: hidden;
+}
+
+.lp-cg-feature-art { position: relative; min-height: 360px; }
+.lp-cg-feature .lp-cg-phone { width: min(46%, 220px); border-radius: 26px; padding: 7px; }
+.lp-cg-feature .lp-cg-screen { border-radius: 20px; }
+.lp-cg-feature .lp-cg-cap { min-height: 64px; }
+.lp-cg-feature .lp-cg-cap.s-pop .w,
+.lp-cg-feature .lp-cg-cap.s-neon .w { font-size: clamp(14px, 1.6vw, 19px); }
+.lp-cg-feature .lp-cg-cap.s-karaoke .w { font-size: clamp(13px, 1.4vw, 16px); }
+
+.lp-cg-feature-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  padding: clamp(24px, 3.5vw, 44px);
+}
+
+.lp-cg-ribbon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-family: var(--mn);
+  font-weight: 700;
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+.lp-cg-feature h3 {
+  margin: 0;
+  font-family: var(--dis);
+  font-weight: 700;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+}
+
+.lp-cg-lead { margin: 0; font-size: 16px; line-height: 1.6; color: var(--fg-2); max-width: 46ch; }
+
+.lp-cg-points { display: grid; gap: 8px; margin: 2px 0 0; padding: 0; list-style: none; }
+.lp-cg-points li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg);
+}
+.lp-cg-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--volt) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.1 4.8-4.8' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px no-repeat;
+}
+
+.lp-cg-feature .lp-price { display: flex; align-items: center; gap: 12px; margin: 6px 0 0; }
+.lp-cg-feature .lp-price s { font-size: 17px; }
+.lp-cg-feature .lp-price b { padding: 8px 16px; border: 0; background: var(--volt); color: var(--on-volt); font-size: 14px; }
+
+@media (max-width: 860px) {
+  /* Side by side like the other bonus cards, just taller. */
+  .lp-cg-feature { grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr); border-radius: 20px; margin-bottom: 16px; }
+  .lp-cg-feature-art { min-height: 0; }
+  .lp-cg-feature .lp-cg-phone { width: 72%; border-radius: 14px; padding: 4px; }
+  .lp-cg-feature .lp-cg-screen { border-radius: 11px; }
+  .lp-cg-feature .lp-cg-cap { min-height: 34px; }
+  .lp-cg-feature .lp-cg-cap.s-pop .w, .lp-cg-feature .lp-cg-cap.s-neon .w { font-size: 10px; }
+  .lp-cg-feature .lp-cg-cap.s-karaoke .w { font-size: 9.5px; }
+  .lp-cg-feature .lp-cg-style { font-size: 8px; padding: 3px 7px; bottom: 4%; }
+  .lp-cg-feature-body { padding: 16px 14px 16px 16px; gap: 9px; }
+  .lp-cg-ribbon { font-size: 9.5px; letter-spacing: 0.1em; gap: 6px; }
+  .lp-cg-feature h3 { font-size: 19px; }
+  .lp-cg-points { gap: 6px; }
+  .lp-cg-points li { font-size: 12.5px; line-height: 1.4; padding-left: 20px; }
+  .lp-cg-points li::before { width: 14px; height: 14px; top: 1px; background-size: 10px; }
+  .lp-cg-feature .lp-price { margin-top: 2px; }
+  .lp-cg-feature .lp-price s { font-size: 14px; }
+  .lp-cg-feature .lp-price b { padding: 6px 12px; font-size: 12px; }
+}
+
+/* ---------- Small fixes ---------- */
+
+/* Bonus heading on one line from tablet width up. */
+@media (min-width: 861px) {
+  .lp-bonus .lp-sec-head { max-width: none; }
+  .lp-bonus .lp-head { white-space: nowrap; }
+}
+
+/* The certificate artwork has its own edge; square corners show it whole. */
+.lp-cert-shot img { border-radius: 0; }
+
+/* No thumbnail in the sticky bar, so give the text room from the edge. */
+.lp-sticky { padding-left: 24px; }
+@media (max-width: 860px) { .lp-sticky { padding-left: 18px; } }
+@media (max-width: 400px) { .lp-sticky { padding-left: 16px; } }
+
+/* Two-part logos (mark + wordmark): a tighter gap so the pair fits the tile. */
+.lp-logo:has(img + img) { gap: 6px; }
+.lp-logo img { flex: none; max-width: 100%; }

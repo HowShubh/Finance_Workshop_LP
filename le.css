@@ -1,0 +1,155 @@
+/* ===========================================================
+   Learn to Earn Through Content — additions on top of home.css,
+   theme.css and ai.css, which are the AI for Content Creation
+   page's stylesheets used as-is so the workshops read as one family.
+
+   Only what this page has and that one does not lives here: the
+   price beside the hero CTA, the reach band under the hero, the
+   bonus photos (landscape, not square) and written testimonials
+   in place of video ones.
+   =========================================================== */
+
+/* ---------- Price beside the hero CTA ---------- */
+
+.le-buy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 18px;
+}
+.le-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0;
+  font-family: var(--dis);
+}
+.le-price b { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; color: var(--fg); }
+.le-price s { font-size: 17px; color: var(--fg-3); }
+.le-price span {
+  align-self: center;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(var(--glow), 0.16);
+  color: var(--accent-ink);
+  font-family: var(--mn);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lp-strip s { opacity: 0.7; margin-left: 4px; }
+
+/* ---------- Reach band ---------- */
+
+.le-reach { padding-block: 0 clamp(28px, 4vw, 44px); }
+.le-reach-in {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid var(--rule);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.le-reach-in > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 22px;
+}
+.le-reach-in > div + div { border-left: 1px solid var(--rule); }
+.le-reach b {
+  font-family: var(--dis);
+  font-weight: 700;
+  font-size: clamp(22px, 2.6vw, 32px);
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+.le-reach span { font-size: 13.5px; color: var(--fg-2); }
+
+/* ---------- Bonus photos ---------- */
+
+.lp-bonus-art img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+}
+
+/* ---------- Written testimonials ---------- */
+
+.le-quote {
+  flex-basis: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 22px;
+  margin: 0;
+  padding: 24px 22px 20px;
+  background: #ffffff;
+  border-color: var(--rule);
+}
+.le-quote blockquote {
+  position: relative;
+  margin: 0;
+  padding-top: 28px;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--fg-2);
+}
+.le-quote blockquote::before {
+  content: "\201C";
+  position: absolute;
+  top: -14px;
+  left: -2px;
+  font-family: var(--dis);
+  font-size: 60px;
+  line-height: 1;
+  color: var(--volt);
+}
+.le-quote figcaption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--fg);
+}
+.le-quote figcaption img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .le-reach-in { grid-template-columns: minmax(0, 1fr); }
+  .le-reach-in > div + div { border-left: 0; border-top: 1px solid var(--rule); }
+  .le-reach-in > div { flex-direction: row; align-items: baseline; justify-content: space-between; padding: 14px 18px; }
+  .le-quote { flex-basis: 260px; }
+}
+
+/* home.css lifts the hero copy's children into the grid on phones and
+   orders them one by one; the CTA here sits inside .le-buy, so the
+   wrapper takes the CTA's place in that order. */
+@media (max-width: 860px) {
+  .le-buy { order: 4; }
+}
+
+/* ---------- Reach band: platform logos ---------- */
+
+.le-reach-label { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.le-socials { display: inline-flex; gap: 6px; }
+.le-socials img { display: block; width: 20px; height: 20px; object-fit: contain; }
+
+/* ---------- Hero headline ----------
+   The workshop name is the headline; "Live Workshop" sits under it as
+   a smaller tag line rather than a second headline. */
+.lp-hero h1 em {
+  margin-top: 10px;
+  font-size: clamp(18px, 2vw, 26px);
+  letter-spacing: 0.01em;
+}
+@media (max-width: 860px) {
+  .lp-hero h1 em { font-size: min(5.2vw, 20px); margin-top: 6px; }
+}

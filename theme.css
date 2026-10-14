@@ -1,0 +1,284 @@
+/* ===========================================================
+   Colour themes for the AI for Content Creation page.
+
+   home.css reads every colour from the tokens below, so a theme is
+   just a set of token values on <body>. Light themes also carry
+   .is-light, which fixes the handful of places that assumed light
+   text on a dark ground.
+
+     theme-kk        KK Navy & Yellow   (dark)
+     theme-orange    Charcoal & Orange  (dark)
+     theme-teal      Midnight & Teal    (dark)
+     theme-cream     KK Cream & Yellow  (light)
+     theme-sunrise   Warm White & Orange (light)
+
+   --volt is the button colour; --accent-ink is the colour used for
+   accent *text* and icons, which on a light ground has to be darker
+   than the button.
+   =========================================================== */
+
+/* ---------- Dark: KK Navy & Yellow ---------- */
+.lp-body.theme-kk {
+  --night: #042338;
+  --night-2: #0a3150;
+  --night-3: #0f3d62;
+  --rule: rgba(190, 222, 245, 0.16);
+  --rule-2: rgba(190, 222, 245, 0.08);
+  --fg: #f4f8fb;
+  --fg-rgb: 244, 248, 251;
+  --fg-2: #b8cedd;
+  --fg-3: #85a3b8;
+
+  --paper: #f9f8f4;
+  --ink: #03426a;
+  --ink-2: #3f5f74;
+  --ink-3: #7d8f9b;
+  --pr: rgba(3, 66, 106, 0.14);
+
+  --volt: #ffd84d;
+  --volt-2: #ffe37a;
+  --glow: 255, 216, 77;
+  --on-volt: #03263d;
+  --on-volt-rgb: 3, 38, 61;
+  --accent-ink: #ffd84d;
+  --leaf: #03426a;
+  --red-ink: #ff5a36;
+
+  --nav-bg: rgba(4, 35, 56, 0.78);
+  --sticky-bg: rgba(6, 42, 66, 0.92);
+  --deep: #021b2c;
+  --foot: #021624;
+}
+
+/* ---------- Dark: Charcoal & Orange ---------- */
+.lp-body.theme-orange {
+  --night: #121316;
+  --night-2: #1c1d22;
+  --night-3: #26282e;
+  --rule: rgba(255, 255, 255, 0.13);
+  --rule-2: rgba(255, 255, 255, 0.07);
+  --fg: #f7f5f2;
+  --fg-rgb: 247, 245, 242;
+  --fg-2: #c4bfb8;
+  --fg-3: #8f8a84;
+
+  --paper: #faf5ee;
+  --ink: #1b1c20;
+  --ink-2: #57534e;
+  --ink-3: #8d877f;
+  --pr: rgba(27, 28, 32, 0.13);
+
+  --volt: #ff7a1a;
+  --volt-2: #ff9447;
+  --glow: 255, 122, 26;
+  --on-volt: #1a0c00;
+  --on-volt-rgb: 26, 12, 0;
+  --accent-ink: #ff8a33;
+  --leaf: #d9620b;
+  --red-ink: #e8430c;
+
+  --nav-bg: rgba(18, 19, 22, 0.8);
+  --sticky-bg: rgba(28, 29, 34, 0.94);
+  --deep: #0c0d0f;
+  --foot: #0a0a0c;
+}
+
+/* ---------- Dark: Midnight & Teal ---------- */
+.lp-body.theme-teal {
+  --night: #06131f;
+  --night-2: #0c2233;
+  --night-3: #123046;
+  --rule: rgba(160, 230, 225, 0.15);
+  --rule-2: rgba(160, 230, 225, 0.08);
+  --fg: #eefaf9;
+  --fg-rgb: 238, 250, 249;
+  --fg-2: #a9c9cc;
+  --fg-3: #7597a0;
+
+  --paper: #eef7f6;
+  --ink: #0a2530;
+  --ink-2: #44636b;
+  --ink-3: #7a959b;
+  --pr: rgba(10, 37, 48, 0.13);
+
+  --volt: #2ee6c9;
+  --volt-2: #63f0da;
+  --glow: 46, 230, 201;
+  --on-volt: #03211d;
+  --on-volt-rgb: 3, 33, 29;
+  --accent-ink: #2ee6c9;
+  --leaf: #0f8f7b;
+  --red-ink: #e0405a;
+
+  --nav-bg: rgba(6, 19, 31, 0.78);
+  --sticky-bg: rgba(10, 30, 45, 0.92);
+  --deep: #040e17;
+  --foot: #030b12;
+}
+
+/* ---------- Light: KK Cream & Yellow ---------- */
+.lp-body.theme-cream {
+  --night: #f9f8f4;
+  --night-2: #ffffff;
+  --night-3: #f1efe7;
+  --rule: rgba(3, 66, 106, 0.16);
+  --rule-2: rgba(3, 66, 106, 0.1);
+  --fg: #03426a;
+  --fg-rgb: 3, 66, 106;
+  --fg-2: #3f5f74;
+  --fg-3: #6f8594;
+
+  --paper: #03426a;           /* the "paper" bands flip to KK navy */
+  --ink: #ffffff;
+  --ink-2: #c9dbe7;
+  --ink-3: #93b2c7;
+  --pr: rgba(255, 255, 255, 0.18);
+
+  --volt: #ffd84d;
+  --volt-2: #ffe37a;
+  --glow: 255, 200, 40;
+  --on-volt: #03263d;
+  --on-volt-rgb: 3, 38, 61;
+  --accent-ink: #e8492a;
+  --leaf: #ffd84d;
+  --red-ink: #ffd84d;
+
+  --nav-bg: rgba(249, 248, 244, 0.86);
+  --sticky-bg: rgba(255, 255, 255, 0.95);
+  --deep: #e9e6dc;
+  --foot: #03426a;
+}
+
+/* ---------- Light: Warm White & Orange ---------- */
+.lp-body.theme-sunrise {
+  --night: #ffffff;
+  --night-2: #fff7f0;
+  --night-3: #ffeede;
+  --rule: rgba(40, 24, 10, 0.13);
+  --rule-2: rgba(40, 24, 10, 0.08);
+  --fg: #1f1a17;
+  --fg-rgb: 31, 26, 23;
+  --fg-2: #5a514b;
+  --fg-3: #8a7f77;
+
+  --paper: #fff3e6;
+  --ink: #1f1a17;
+  --ink-2: #5a514b;
+  --ink-3: #8a7f77;
+  --pr: rgba(40, 24, 10, 0.12);
+
+  --volt: #ff6a13;
+  --volt-2: #ff8540;
+  --glow: 255, 106, 19;
+  --on-volt: #ffffff;
+  --on-volt-rgb: 255, 255, 255;
+  --accent-ink: #e2560a;
+  --leaf: #e2560a;
+  --red-ink: #e2560a;
+
+  --nav-bg: rgba(255, 255, 255, 0.86);
+  --sticky-bg: rgba(255, 255, 255, 0.95);
+  --deep: #fbe9d7;
+  --foot: #1f1a17;
+}
+
+/* ===========================================================
+   Accent text: home.css colours these with --volt, which is the
+   button colour. Route them through --accent-ink instead.
+   =========================================================== */
+
+.lp-body .lp-hero h1 em,
+.lp-body section:not(.lp-paper) .lp-head em,
+.lp-body .lp-stat b,
+.lp-body .lp-points svg,
+.lp-body .lp-checks svg,
+.lp-body .lp-bonus-sub b { color: var(--accent-ink); }
+
+/* ===========================================================
+   Light-theme fixes (.is-light)
+   =========================================================== */
+
+html:has(.is-light) { color-scheme: light; }
+
+/* The KK mark is a white logo; invert it onto a light bar. */
+.is-light .lp-nav .lp-brand img { filter: invert(1); }
+
+/* Name plates sit on a dark gradient over the photo either way. */
+.is-light .lp-mentor-name { color: #fff; }
+.is-light .lp-mentor-name span { color: rgba(255, 255, 255, 0.75); }
+.is-light .lp-mentor-name i { color: #ffd9a8; }
+
+/* White logo tiles need an edge on a light page. */
+.is-light .lp-logo { border: 1px solid var(--rule); }
+
+/* Cards read as cards on a light ground. */
+.is-light .lp-bonus-card { box-shadow: 0 14px 34px rgba(20, 20, 40, 0.08); }
+.is-light .lp-sticky { box-shadow: 0 18px 50px rgba(20, 20, 40, 0.18); }
+
+/* The closing band's inverted button: ink on the button colour. */
+.is-light .lp-cta-ink { background: var(--fg); color: var(--night); }
+.is-light .lp-cta-ink:hover { background: var(--fg-2); color: var(--night); }
+
+/* Footers are dark in both light themes. */
+.is-light .lp-foot { --fg: #ffffff; --fg-3: rgba(255, 255, 255, 0.7); color: #fff; }
+
+/* Cream theme: its bands are navy, so their text is light. */
+.theme-cream .lp-paper .lp-eyebrow { color: var(--ink-3); }
+.theme-cream .lp-module[open] { background: rgba(255, 255, 255, 0.06); }
+.theme-cream .lp-learn-shot { box-shadow: 14px 14px 0 rgba(var(--glow), 0.9); }
+
+/* ===========================================================
+   Cream accents
+
+   Same cream page and navy text as .theme-cream; only the action
+   colour changes. Add one of these next to theme-cream on <body>.
+   --band-accent is the lighter shade used on the navy bands
+   (numerals, ticks, open-row marks), where the full colour would
+   be too dark to read.
+   =========================================================== */
+
+.theme-cream[class*="acc-"] { --leaf: var(--band-accent); --red-ink: var(--band-accent); }
+
+.theme-cream.acc-navy {
+  --volt: #03426a; --volt-2: #0a5487; --glow: 3, 66, 106;
+  --on-volt: #ffffff; --on-volt-rgb: 255, 255, 255;
+  --accent-ink: #e8492a; --band-accent: #ffb199;
+}
+.theme-cream.acc-coral {
+  --volt: #e2452a; --volt-2: #f05a3f; --glow: 226, 69, 42;
+  --on-volt: #ffffff; --on-volt-rgb: 255, 255, 255;
+  --accent-ink: #d63c21; --band-accent: #ff9c86;
+}
+.theme-cream.acc-mustard {
+  --volt: #e9a800; --volt-2: #f5b914; --glow: 233, 168, 0;
+  --on-volt: #03263d; --on-volt-rgb: 3, 38, 61;
+  --accent-ink: #b37a00; --band-accent: #ffc94a;
+}
+.theme-cream.acc-blue {
+  --volt: #2f5bea; --volt-2: #4a72f5; --glow: 47, 91, 234;
+  --on-volt: #ffffff; --on-volt-rgb: 255, 255, 255;
+  --accent-ink: #2f5bea; --band-accent: #9db4ff;
+}
+.theme-cream.acc-teal {
+  --volt: #0e8a78; --volt-2: #12a08b; --glow: 14, 138, 120;
+  --on-volt: #ffffff; --on-volt-rgb: 255, 255, 255;
+  --accent-ink: #0b7a6a; --band-accent: #6fe3cf;
+}
+.theme-cream.acc-green {
+  --volt: #1f7a4d; --volt-2: #268f5b; --glow: 31, 122, 77;
+  --on-volt: #ffffff; --on-volt-rgb: 255, 255, 255;
+  --accent-ink: #1b6e45; --band-accent: #8fe0b4;
+}
+.theme-cream.acc-berry {
+  --volt: #c2185b; --volt-2: #d6286d; --glow: 194, 24, 91;
+  --on-volt: #ffffff; --on-volt-rgb: 255, 255, 255;
+  --accent-ink: #b0154f; --band-accent: #ff9cc2;
+}
+
+/* Navy accent: the closing band is navy too, so its button goes white. */
+.theme-cream.acc-navy .lp-cta-ink { background: #ffffff; color: #03426a; }
+.theme-cream.acc-navy .lp-cta-ink:hover { background: #eef3f7; color: #03426a; }
+
+/* The FREE pill in the bonus heading is button-coloured, so its text
+   takes the button's text colour, not the accent-text rule above. */
+.lp-body section.lp-bonus .lp-head em { color: var(--on-volt); }

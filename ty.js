@@ -33,9 +33,8 @@ const TY = {
   // the referrer's ad, which is the opposite of the point — so a student
   // sharing this passes on a clean link.
   //
-  // The live TagMango landing page for now. Swap for this site's own URL
-  // once it is up on its domain. Empty hides the referral card.
-  referralUrl: 'https://lp.kkcreate.in/learnearn',
+  // Empty hides the referral card.
+  referralUrl: 'https://finance.kkcreate.in/',
 
   /* How long the offer stays open per visitor, from the moment they first
      see it — which is normally /leoto, since that is the page checkout

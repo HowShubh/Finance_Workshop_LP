@@ -7,9 +7,8 @@
 const TY = {
   // WhatsApp community. Updates, the joining link, the recording when it
   // lands, and Q&A.
-  // TODO: paste the Learn to Earn Through Content group's invite link.
-  // While it is empty the Join buttons keep their authored #community href.
-  whatsappUrl: '',
+  // Learn to Earn Through Content community group.
+  whatsappUrl: 'https://chat.whatsapp.com/FXlwF0YX7AXBEQpiAA0r30',
 
   // The Complete Creator Package offer page. Its own CTA goes to TagMango.
   otoUrl: '/leoto',

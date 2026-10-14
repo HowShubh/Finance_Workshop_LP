@@ -153,3 +153,207 @@
 @media (max-width: 860px) {
   .lp-hero h1 em { font-size: min(5.2vw, 20px); margin-top: 6px; }
 }
+
+/* ---------- Enrol bar: scroll-only ----------
+   home.css raises the bar from first paint on desktop. Here it waits for
+   le.js on every width (see le.js for when it comes in). */
+.lp-sticky[data-le-sticky] { transform: translate(-50%, 170%); }
+.lp-sticky[data-le-sticky].is-in { transform: translate(-50%, 0); }
+
+/* On a phone the nav's Enroll is a second copy of the hero button, then
+   of the bar, so it goes. */
+@media (max-width: 860px) {
+  .lp-nav .lp-cta-xs { display: none; }
+}
+
+/* ---------- Testimonials: second rail and voice note ---------- */
+
+.le-rail-written { margin-top: clamp(36px, 5vw, 56px); }
+.le-sub-head {
+  margin: 0;
+  font-family: var(--dis);
+  font-weight: 700;
+  font-size: clamp(20px, 2.2vw, 26px);
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+
+.le-voice {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(22px, 4vw, 52px);
+  align-items: center;
+  margin-top: clamp(36px, 5vw, 56px);
+  padding: clamp(24px, 4vw, 44px);
+  border-radius: 26px;
+  background:
+    radial-gradient(520px 260px at 100% 0%, rgba(var(--glow), 0.28), transparent 70%),
+    #03426a;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.le-voice-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 14px;
+  font-family: var(--mn);
+  font-weight: 700;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffd166;
+}
+.le-voice-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  animation: le-ping 1.8s ease-out infinite;
+}
+.le-voice h3 {
+  margin: 0 0 12px;
+  font-family: var(--dis);
+  font-weight: 700;
+  font-size: clamp(24px, 2.8vw, 34px);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+.le-voice-copy p:last-child { margin: 0; font-size: 16px; line-height: 1.65; color: #cfe0ec; }
+.le-voice-copy b { color: #ffffff; }
+
+/* The chat: a WhatsApp-ish wallpaper with one incoming voice bubble. */
+.le-voice-chat {
+  padding: clamp(18px, 3vw, 28px);
+  border-radius: 20px;
+  background-color: #0b2a3f;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1.2px);
+  background-size: 14px 14px;
+}
+
+.le-bubble {
+  position: relative;
+  max-width: 440px;
+  padding: 12px 14px 8px;
+  border-radius: 4px 18px 18px 18px;
+  background: #ffffff;
+  color: #03263d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+.le-bubble::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -8px;
+  border-top: 10px solid #ffffff;
+  border-left: 10px solid transparent;
+}
+
+.le-player { display: flex; align-items: center; gap: 12px; }
+
+.le-play {
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 46px; height: 46px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--volt);
+  color: var(--on-volt);
+  cursor: pointer;
+}
+.le-play svg { width: 22px; height: 22px; }
+.le-play .i-play { margin-left: 2px; }
+.le-play .i-pause { display: none; }
+.le-voice.is-playing .le-play .i-play { display: none; }
+.le-voice.is-playing .le-play .i-pause { display: block; }
+.le-play:focus-visible, .le-speed:focus-visible, .le-wave:focus-visible { outline: 2px solid #03426a; outline-offset: 3px; }
+
+/* Autoplay was refused: the button asks for the tap. */
+.le-voice.needs-tap .le-play { animation: le-ping-volt 1.6s ease-out infinite; }
+
+.le-wave {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 38px;
+  cursor: pointer;
+}
+.le-wave i {
+  flex: 1;
+  min-width: 2px;
+  border-radius: 2px;
+  background: rgba(3, 66, 106, 0.22);
+  transition: background-color 0.2s ease;
+}
+.le-wave i.on { background: #03426a; }
+.le-voice.is-playing .le-wave i.on:last-of-type,
+.le-voice.is-playing .le-wave i.on + i:not(.on) { background: var(--volt); }
+
+.le-speed {
+  flex: none;
+  min-width: 42px;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(3, 66, 106, 0.08);
+  color: #03426a;
+  font-family: var(--mn);
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.le-bubble-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  padding-left: 58px;
+  font-family: var(--mn);
+  font-size: 11px;
+  color: #6f8594;
+}
+.le-ticks { color: #34b7f1; }
+
+.le-voice-hint {
+  margin: 12px 0 0;
+  font-family: var(--mn);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9fbad0;
+}
+
+@keyframes le-ping { to { box-shadow: 0 0 0 9px rgba(37, 211, 102, 0); } }
+@keyframes le-ping-volt {
+  0% { box-shadow: 0 0 0 0 rgba(var(--glow), 0.7); }
+  100% { box-shadow: 0 0 0 16px rgba(var(--glow), 0); }
+}
+
+@media (max-width: 860px) {
+  .le-voice { grid-template-columns: minmax(0, 1fr); }
+  .le-bubble-meta { padding-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .le-voice-dot, .le-voice.needs-tap .le-play { animation: none; }
+}
+
+/* ---------- Footer legal links ---------- */
+
+.le-legal { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.le-legal a { font-size: 14px; }
+
+/* 56 bars at 2px plus gaps outgrow a phone's bubble and push the speed
+   button out, so the wave is allowed to shrink and the chrome tightens. */
+.le-wave { min-width: 0; }
+@media (max-width: 520px) {
+  .le-voice { padding: 22px 16px; }
+  .le-voice-chat { padding: 14px 10px; }
+  .le-player { gap: 8px; }
+  .le-play { width: 40px; height: 40px; }
+  .le-wave { gap: 1px; }
+  .le-wave i { min-width: 1px; }
+  .le-speed { min-width: 36px; padding: 4px 6px; }
+}

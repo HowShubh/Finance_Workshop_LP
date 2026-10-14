@@ -1,0 +1,35 @@
+/* ===========================================================
+   Thank-you pages in the landing page's colours: KK cream ground,
+   navy panels and the mustard accent (theme-cream + acc-mustard in
+   theme.css). Loaded after base.css and ty.css, so it only swaps
+   tokens and leaves the layout alone.
+   =========================================================== */
+
+:root {
+  --bg: #f9f8f4;
+  --surface: #ffffff;
+  --surface-2: #f6f1e3;
+  --header-bg: rgba(249, 248, 244, 0.92);
+
+  --text: #03263d;
+  --text-2: #3f5f74;
+  --text-3: #6f8594;
+
+  --line-rgb: 3, 66, 106;
+
+  --accent: #e9a800;
+  --accent-hover: #f5b914;
+  --accent-text: #03426a;
+  --accent-soft: #fdf0c8;
+  --accent-wash: #fff8e3;
+  --accent-rgb: 233, 168, 0;
+  --on-accent: #03263d;
+
+  --panel: #03426a;
+  --panel-2: #02324f;
+  --panel-hover: #0a5487;
+}
+
+/* Link hover in the accent would be mustard on cream, too light to
+   read, so links darken instead. */
+a:hover { color: #b37a00; }

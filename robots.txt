@@ -1,7 +1,14 @@
-# The funnel pages (/leoto, /tyle, /tybundle) are not blocked here on
-# purpose: they carry a noindex tag, and a crawler has to be allowed to
-# fetch a page to see it.
+# Only the landing page is open to search engines. Everything else is
+# closed by the catch-all Disallow below, without being named here, so
+# this file does not point anyone at pages that are not meant to be found.
+# The page's stylesheets, scripts and images stay open so it can be
+# rendered properly.
 User-agent: *
-Allow: /
+Allow: /$
+Allow: /index.html$
+Allow: /assets/
+Allow: /*.css$
+Allow: /*.js$
+Disallow: /
 
 Sitemap: https://finance.kkcreate.in/sitemap.xml

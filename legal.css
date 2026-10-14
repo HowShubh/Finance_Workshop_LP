@@ -1,0 +1,32 @@
+/* Privacy Policy and Terms: the landing page's nav, footer and colours
+   (home.css + theme.css), with a plain reading column in between. */
+
+.le-doc { padding-block: clamp(36px, 6vw, 72px) clamp(48px, 7vw, 96px); }
+.le-doc-in { max-width: 760px; margin: 0 auto; }
+.le-doc .lp-eyebrow { margin-bottom: 10px; }
+.le-doc h1 {
+  margin: 0 0 8px;
+  font-family: var(--dis);
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--fg);
+}
+.le-doc-date { margin: 0 0 28px; font-family: var(--mn); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-3); }
+.le-doc h2 {
+  margin: 34px 0 10px;
+  font-family: var(--dis);
+  font-weight: 700;
+  font-size: 21px;
+  letter-spacing: -0.015em;
+  color: var(--fg);
+}
+.le-doc p, .le-doc li { font-size: 16px; line-height: 1.7; color: var(--fg-2); }
+.le-doc p { margin: 0 0 12px; }
+.le-doc ul { margin: 0 0 12px; padding-left: 20px; }
+.le-doc li { margin-bottom: 6px; }
+.le-doc b { color: var(--fg); }
+.le-doc a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; }
+.le-legal { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.le-legal a { font-size: 14px; }

@@ -357,3 +357,28 @@
   .le-wave i { min-width: 1px; }
   .le-speed { min-width: 36px; padding: 4px 6px; }
 }
+
+/* ---------- Hero photo ----------
+   The cut-out is cropped at the waist (the source's dark fade is gone)
+   and already fades out at its foot, so home.css's mask is not needed.
+   It is never cropped by the box: on a phone home.css switches to
+   cover in a shorter box, which took the top of the head off. */
+.lp-hero-media > img {
+  object-fit: contain;
+  object-position: 50% 100%;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+@media (max-width: 860px) {
+  .lp-hero-media { aspect-ratio: 500 / 380; }
+  .lp-hero-media > img { object-fit: contain; }
+}
+
+/* ---------- Full-width Enroll buttons on phones ---------- */
+@media (max-width: 860px) {
+  .le-buy { width: 100%; }
+  main .lp-cta { display: flex; width: 100%; justify-content: center; box-sizing: border-box; }
+}
+@media (max-width: 860px) {
+  main .lp-cta.lp-cta-sm { width: 100%; max-width: none; align-self: stretch; }
+}

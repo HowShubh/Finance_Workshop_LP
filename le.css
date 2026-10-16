@@ -397,17 +397,27 @@
   .le-buy .lp-cta { min-width: 300px; padding-inline: 48px; }
 }
 
-/* ---------- Hero photo: larger, and up off the floor on desktop ----------
-   The cut-out is landscape (500×330), so in home.css's square box it sat
-   in the bottom third under a band of empty arch. A shorter box lets it
-   fill the width and sit level with the copy; the photo column is
-   widened to match. */
+/* ---------- Hero photo: framed in a solid arch ----------
+   The arch is as wide as the pair and starts just under the top of
+   Lokesh's head, so his head breaks out over it while Kavya's sits
+   inside. The photo fades out into the LIVE badge at the arch's foot.
+   The box is the photo's own shape (500×330) plus room for the badge. */
 @media (min-width: 861px) {
   .lp-hero-in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .lp-hero-media { aspect-ratio: 500 / 375; }
-  .lp-hero-media::before { inset: -6% 3% 0; }
-  .lp-hero-media::after { inset: 2% 10% 4%; }
-  /* Wider than the box so the pair fills its height; the arch stays
-     inside it. */
-  .lp-hero-media > img { width: 110%; max-width: none; margin-left: -5%; }
 }
+.lp-hero-media { aspect-ratio: 500 / 345; max-width: 560px; width: 100%; margin-inline: auto; }
+.lp-hero-media::before {
+  inset: 7.5% 10% 0;
+  border-radius: 999px 999px 18px 18px;
+  background: linear-gradient(180deg, rgba(var(--glow), 0.3), rgba(var(--glow), 0.16));
+  border: 1px solid rgba(var(--glow), 0.4);
+}
+.lp-hero-media::after { content: none; }
+.lp-hero-media > img {
+  height: auto;
+  aspect-ratio: 500 / 330;
+  object-fit: contain;
+  -webkit-mask-image: linear-gradient(180deg, #000 82%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 82%, transparent 100%);
+}
+.lp-hero-media .lp-flag { bottom: -14px; }

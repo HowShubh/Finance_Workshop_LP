@@ -382,3 +382,32 @@
 @media (max-width: 860px) {
   main .lp-cta.lp-cta-sm { width: 100%; max-width: none; align-self: stretch; }
 }
+
+/* ---------- Hero headline: two lines of equal width ----------
+   "Learn to Earn" is set larger and "Through Content" smaller so the two
+   lines end at the same edge. The ratio is measured against the display
+   face; the line sizes are in em of the span home.css already sizes. */
+.lp-hero h1 .le-h1-a,
+.lp-hero h1 .le-h1-b { display: block; white-space: nowrap; }
+.lp-hero h1 .le-h1-a { font-size: 1.2em; }
+.lp-hero h1 .le-h1-b { font-size: 0.935em; }
+
+/* ---------- Hero CTA: wider on desktop ---------- */
+@media (min-width: 861px) {
+  .le-buy .lp-cta { min-width: 300px; padding-inline: 48px; }
+}
+
+/* ---------- Hero photo: larger, and up off the floor on desktop ----------
+   The cut-out is landscape (500×330), so in home.css's square box it sat
+   in the bottom third under a band of empty arch. A shorter box lets it
+   fill the width and sit level with the copy; the photo column is
+   widened to match. */
+@media (min-width: 861px) {
+  .lp-hero-in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .lp-hero-media { aspect-ratio: 500 / 375; }
+  .lp-hero-media::before { inset: -6% 3% 0; }
+  .lp-hero-media::after { inset: 2% 10% 4%; }
+  /* Wider than the box so the pair fills its height; the arch stays
+     inside it. */
+  .lp-hero-media > img { width: 110%; max-width: none; margin-left: -5%; }
+}

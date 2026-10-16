@@ -5,22 +5,20 @@
 /* ---------- Enrol bar ----------
 
    home.js shows its bar from the first paint on desktop and as soon as
-   the hero button leaves on a phone. This page wants fewer buttons on
-   screen at once, so the bar uses its own attribute (data-le-sticky,
-   which home.js ignores) and comes in only when all of these hold:
-
-     - the visitor has scrolled at all,
-     - the hero's Enroll button is off screen,
-     - no other Enroll button on the page is on screen.
-
-   So there is never more than one Enroll in view, besides the nav's on
-   desktop (le.css hides that one on phones). */
+   the hero button leaves on a phone. This page's bar uses its own
+   attribute (data-le-sticky, which home.js ignores) and comes in once
+   the visitor has scrolled past the hero's Enroll button. It then stays
+   until the page's closing Enroll band comes into view (or the visitor
+   scrolls back up to the hero). The Enroll buttons in between don't
+   hide it: doing that made it slide out and back in three times on
+   the way down. */
 (function () {
   const bar = document.querySelector('[data-le-sticky]');
   if (!bar) return;
   if (!('IntersectionObserver' in window)) { bar.classList.add('is-in'); return; }
 
-  const ctas = [...document.querySelectorAll('main [data-buy]')];
+  const hero = document.querySelector('.lp-hero [data-buy]');
+  const closing = document.querySelector('main .lp-cta-ink[data-buy]');
   const visible = new Set();
   let scrolled = window.scrollY > 0;
 
@@ -32,7 +30,7 @@
     entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
     update();
   }, { rootMargin: '0px 0px -40px 0px' });
-  ctas.forEach((el) => io.observe(el));
+  [hero, closing].forEach((el) => el && io.observe(el));
 
   window.addEventListener('scroll', () => {
     if (scrolled) return;

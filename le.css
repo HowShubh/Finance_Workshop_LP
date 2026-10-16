@@ -398,26 +398,28 @@
 }
 
 /* ---------- Hero photo: framed in a solid arch ----------
-   The arch is as wide as the pair and starts just under the top of
-   Lokesh's head, so his head breaks out over it while Kavya's sits
-   inside. The photo fades out into the LIVE badge at the arch's foot.
-   The box is the photo's own shape (500×330) plus room for the badge. */
+   The full-length cut-out (500×471, down to the waist), with the source's
+   dark backdrop, blue circle and dashed ring taken out so it sits on the
+   cream page. The arch is as wide as the pair and starts just above
+   Kavya's head, so Lokesh's head breaks out over it. The photo fades
+   into the LIVE badge, which sits on the arch's foot. */
 @media (min-width: 861px) {
   .lp-hero-in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 }
-.lp-hero-media { aspect-ratio: 500 / 345; max-width: 560px; width: 100%; margin-inline: auto; }
+.lp-hero-media { aspect-ratio: 500 / 471; max-width: 520px; width: 100%; margin-inline: auto; }
 .lp-hero-media::before {
-  inset: 7.5% 10% 0;
+  inset: 9.5% 8% 0;
   border-radius: 999px 999px 18px 18px;
   background: linear-gradient(180deg, rgba(var(--glow), 0.3), rgba(var(--glow), 0.16));
   border: 1px solid rgba(var(--glow), 0.4);
 }
 .lp-hero-media::after { content: none; }
 .lp-hero-media > img {
-  height: auto;
-  aspect-ratio: 500 / 330;
+  height: 100%;
   object-fit: contain;
-  -webkit-mask-image: linear-gradient(180deg, #000 82%, transparent 100%);
-  mask-image: linear-gradient(180deg, #000 82%, transparent 100%);
+  object-position: 50% 0;
+  -webkit-mask-image: linear-gradient(180deg, #000 86%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 86%, transparent 100%);
 }
-.lp-hero-media .lp-flag { bottom: -14px; }
+.lp-hero-media .lp-flag { bottom: 0; transform: translate(-50%, 50%); }
+@media (max-width: 860px) { .lp-hero-media { margin-bottom: 18px; } }

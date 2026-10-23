@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Course Curriculum — AI for Content Creation | KK Create</title>
+<meta name="description" content="AI for Content Creation: 8 modules, 50 lessons, from ideation to the final edit. See every lesson and download the full curriculum as a PDF." />
+<link rel="icon" type="image/png" href="../assets/favicon.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../assets/fonts/space-grotesk-700-latin.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../assets/fonts/manrope-400-latin.woff2" />
+<link rel="stylesheet" href="../base.css" />
+<link rel="stylesheet" href="../ty.css" />
+<style>
+  /* Page-only: a navy hero with the download CTA, the roadmap, every
+     module's lessons, then the download again at the bottom. */
+  .cc-hero { padding-top: clamp(20px, 4vw, 36px); }
+  .cc-panel {
+    background: var(--panel); color: var(--on-panel); border-radius: 22px;
+    padding: clamp(28px, 6vw, 52px) clamp(18px, 5vw, 44px); text-align: center;
+  }
+  .cc-badge {
+    display: inline-block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--lime-soft); margin-bottom: 14px;
+  }
+  .cc-panel h1 {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(32px, 6.4vw, 52px); line-height: 1.06; margin: 0 0 12px; color: #fff;
+  }
+  .cc-lead { color: var(--on-panel-muted); font-size: clamp(15px, 2.4vw, 18px); margin: 0 auto 24px; max-width: 540px; }
+  .cc-stats {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;
+    list-style: none; padding: 0; margin: 0 0 28px;
+  }
+  .cc-stats li {
+    background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px; padding: 7px 14px; font-size: 13.5px; color: var(--on-panel);
+  }
+  .cc-stats b { color: var(--lime-soft); font-weight: 700; }
+  .cc-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    width: min(100%, 380px); padding: 16px 28px; border-radius: 14px;
+    background: var(--lime); color: var(--panel); font-weight: 700; font-size: 17px; text-decoration: none;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28); transition: transform 0.15s ease, background-color 0.15s ease;
+  }
+  .cc-btn:hover { background: #b8ef3a; color: var(--panel); transform: translateY(-2px); }
+  .cc-alt { display: block; margin-top: 14px; font-size: 13.5px; color: var(--on-panel-muted-2); }
+  .cc-alt:hover { color: var(--on-panel-muted); }
+
+  .cc-section { padding-top: clamp(36px, 7vw, 60px); }
+  .cc-head { margin-bottom: 20px; }
+  .cc-head h2 {
+    font-family: var(--display); font-weight: 700; color: var(--text);
+    font-size: clamp(24px, 4.4vw, 34px); line-height: 1.12; margin: 8px 0 6px;
+  }
+  .cc-head p { color: var(--text-2); margin: 0; max-width: 60ch; }
+
+  .cc-roadmap {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 12px;
+    list-style: none; padding: 0; margin: 0;
+  }
+  .cc-roadmap a {
+    display: flex; flex-direction: column; gap: 6px; height: 100%; padding: 16px 18px;
+    background: var(--surface); border: 1px solid rgba(var(--line-rgb), 0.1); border-radius: 16px;
+    color: var(--text); text-decoration: none; transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .cc-roadmap a:hover { border-color: rgba(var(--line-rgb), 0.3); transform: translateY(-2px); color: var(--text); }
+  .cc-no { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.08em; }
+  .cc-roadmap strong { font-family: var(--display); font-size: 17px; line-height: 1.25; }
+  .cc-roadmap span:last-child { font-size: 13px; color: var(--text-3); margin-top: auto; }
+
+  .cc-modules { display: flex; flex-direction: column; gap: 10px; }
+  .cc-module {
+    background: var(--surface); border: 1px solid rgba(var(--line-rgb), 0.1); border-radius: 16px;
+    scroll-margin-top: 90px;
+  }
+  .cc-module summary {
+    display: flex; align-items: center; gap: 14px; padding: 16px 18px; cursor: pointer; list-style: none;
+  }
+  .cc-module summary::-webkit-details-marker { display: none; }
+  .cc-module summary .cc-no { flex: none; width: 2.2em; }
+  .cc-title { flex: 1; min-width: 0; font-family: var(--display); font-weight: 700; font-size: clamp(16px, 2.6vw, 19px); color: var(--text); }
+  .cc-count { flex: none; font-size: 12.5px; color: var(--text-3); }
+  .cc-plus { flex: none; color: var(--text-3); transition: transform 0.2s ease; }
+  .cc-module[open] .cc-plus { transform: rotate(45deg); }
+  .cc-lessons { list-style: none; margin: 0; padding: 0 18px 16px calc(18px + 2.2em + 14px); }
+  .cc-lessons li { display: flex; gap: 10px; padding: 7px 0; border-top: 1px solid rgba(var(--line-rgb), 0.07); color: var(--text-2); font-size: 15px; }
+  .cc-lessons li span { flex: none; font-family: var(--mono); font-size: 12.5px; color: var(--text-4); padding-top: 2px; min-width: 2.4em; }
+  @media (max-width: 560px) {
+    .cc-count { display: none; }
+    .cc-lessons { padding-left: 18px; }
+  }
+
+  .cc-end { padding-block: clamp(36px, 7vw, 60px); }
+  .cc-end h2 { font-family: var(--display); font-weight: 700; color: #fff; font-size: clamp(22px, 4vw, 30px); margin: 0 0 10px; }
+</style>
+<!-- Vercel Web Analytics. The shim queues va() calls made before script.js
+     arrives. The path is served by Vercel's edge, so it 404s locally — expected. -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="../analytics.js"></script>
+</head>
+<body>
+
+<header class="ty-header">
+  <div class="wrap">
+    <a class="brand" href="../">
+      <span class="brand-mark"><img src="../assets/logo-mark-light.webp" width="1048" height="678" alt="" /></span>
+      <span class="brand-text">
+        <span class="brand-name">KK Create</span>
+        <span class="brand-kicker">COURSE CURRICULUM</span>
+      </span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="wrap cc-hero">
+    <div class="cc-panel">
+      <span class="cc-badge">Learn by KK Create</span>
+      <h1>AI for Content Creation</h1>
+      <p class="cc-lead">A hands-on course that takes you from ideation to the final edit, one module at a time. Research, script, generate images, video and audio, edit, and do it all responsibly.</p>
+      <ul class="cc-stats">
+        <li><b>8</b> modules</li>
+        <li><b>50</b> lessons</li>
+        <li>Ideation &rarr; Final edit</li>
+      </ul>
+      <a class="cc-btn" href="/course-curriculum/ai-for-content-creation-curriculum.pdf"
+         download="AI for Content Creation - Course Curriculum.pdf">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        Download curriculum (PDF)
+      </a>
+      <a class="cc-alt" href="/course-curriculum/ai-for-content-creation-curriculum.pdf" target="_blank" rel="noopener">Open in a new tab &rarr;</a>
+    </div>
+  </section>
+
+  <section class="wrap cc-section" aria-labelledby="roadmap-h">
+    <div class="cc-head">
+      <span class="kicker">Course roadmap</span>
+      <h2 id="roadmap-h">Eight modules, in the order you&rsquo;ll use them</h2>
+      <p>Each module covers one stage of making content, so by the end you have a complete AI-assisted workflow.</p>
+    </div>
+    <ol class="cc-roadmap">
+      <li><a href="#m1"><span class="cc-no">01</span><strong>Stop Studying AI, Start Using It</strong><span>4 lessons</span></a></li>
+      <li><a href="#m2"><span class="cc-no">02</span><strong>How to Ideate with AI?</strong><span>6 lessons</span></a></li>
+      <li><a href="#m3"><span class="cc-no">03</span><strong>How to Research &amp; Script with AI?</strong><span>12 lessons</span></a></li>
+      <li><a href="#m4"><span class="cc-no">04</span><strong>How to Generate Images with AI?</strong><span>6 lessons</span></a></li>
+      <li><a href="#m5"><span class="cc-no">05</span><strong>How to Generate Videos with AI?</strong><span>6 lessons</span></a></li>
+      <li><a href="#m6"><span class="cc-no">06</span><strong>How to Generate Audio with AI?</strong><span>6 lessons</span></a></li>
+      <li><a href="#m7"><span class="cc-no">07</span><strong>How to Edit with AI?</strong><span>6 lessons</span></a></li>
+      <li><a href="#m8"><span class="cc-no">08</span><strong>Creating Responsibly with AI</strong><span>4 lessons</span></a></li>
+    </ol>
+  </section>
+
+  <section class="wrap cc-section" aria-labelledby="lessons-h">
+    <div class="cc-head">
+      <span class="kicker">Inside each module</span>
+      <h2 id="lessons-h">Every lesson, at a glance</h2>
+      <p>Tap a module to see what it covers.</p>
+    </div>
+    <div class="cc-modules">
+      <details class="cc-module" id="m1" open>
+        <summary><span class="cc-no">01</span><span class="cc-title">Stop Studying AI, Start Using It</span><span class="cc-count">4 lessons</span><svg class="cc-plus" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 3v14M3 10h14" /></svg></summary>
+        <ol class="cc-lessons">
+          <li><span>1.1</span>The AI shift: Why this matters now</li>
+          <li><span>1.2</span>Why AI feels useless sometimes</li>
+          <li><span>1.3</span>How to actually talk to AI</li>
+          <li><span>1.4</span>Beyond prompting: Powerful AI features and tools</li>
+        </ol>
+      </details>
+      <details class="cc-module" id="m2">
+        <summary><span class="cc-no">02</span><span class="cc-title">How to Ideate with AI?</span><span class="cc-count">6 lessons</span><svg class="cc-plus" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 3v14M3 10h14" /></svg></summary>
+        <ol class="cc-lessons">
+          <li><span>2.1</span>How AI has changed the content game</li>
+          <li><span>2.2</span>Before you ideate: Know your niche, platform, and audience</li>
+          <li><span>2.3</span>Where great ideas come from: The five sources</li>
+          <li><span>2.4</span>Idea expansion: One idea, a month of content</li>
+          <li><span>2.5</span>From ideas to action: Filter, package, decide</li>
+          <li><span>2.6</span>Building a content engine: From ideas to a system</li>
+        </ol>
+      </details>
+      <details class="cc-module" id="m3">
+        <summary><span class="cc-no">03</span><span class="cc-title">How to Research &amp; Script with AI?</span><span class="cc-count">12 lessons</span><svg class="cc-plus" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 3v14M3 10h14" /></svg></summary>
+        <ol class="cc-lessons">
+          <li><span>3.1</span>Why research makes or breaks content</li>
+          <li><span>3.2</span>The right way to use LLMs for research</li>
+          <li><span>3.3</span>NotebookLM: Your personal research assistant</li>
+          <li><span>3.4</span>Perplexity: The search engine for deep research</li>
+          <li><span>3.5</span>Fact-checking is non-negotiable</li>
+          <li><span>3.6</span>Finding experts, data, and on-ground sources using AI</li>
+          <li><span>3.7</span>What makes a script actually work?</li>
+          <li><span>3.8</span>Short-form scripts: The hook-body-CTA structure</li>
+          <li><span>3.9</span>Long-form scripts: Research to narrative</li>
+          <li><span>3.10</span>Your first draft with AI: Feed it right, get it right</li>
+          <li><span>3.11</span>Captions, repurposing, and writing across platforms</li>
+          <li><span>3.12</span>Custom GPTs: Train AI to write in your voice</li>
+        </ol>
+      </details>
+      <details class="cc-module" id="m4">
+        <summary><span class="cc-no">04</span><span class="cc-title">How to Generate Images with AI?</span><span class="cc-count">6 lessons</span><svg class="cc-plus" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 3v14M3 10h14" /></svg></summary>
+        <ol class="cc-lessons">
+          <li><span>4.1</span>When to use AI images vs. stock and real footage</li>
+          <li><span>4.2</span>The AI image toolkit: Gemini, Flow, Higgsfield and more</li>
+          <li><span>4.3</span>Prompting images: Turning ideas into visuals</li>
+          <li><span>4.4</span>Building consistent characters, worlds, and styles</li>
+          <li><span>4.5</span>Editing AI images: Inpainting, outpainting, and upscaling</li>
+          <li><span>4.6</span>Designing thumbnails that earn clicks</li>
+        </ol>
+      </details>
+      <details class="cc-module" id="m5">
+        <summary><span class="cc-no">05</span><span class="cc-title">How to Generate Videos with AI?</span><span class="cc-count">6 lessons</span><svg class="cc-plus" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 3v14M3 10h14" /></svg></summary>
+        <ol class="cc-lessons">
+          <li><span>5.1</span>When to use AI video in your workflow</li>
+          <li><span>5.2</span>Text-to-video vs. image-to-video: Choosing your approach</li>
+          <li><span>5.3</span>The AI video toolkit: Seedance, Runway, Kling, Veo3</li>
+          <li><span>5.4</span>Prompting motion, camera, and composition</li>
+          <li><span>5.5</span>Creating consistent scenes across shots</li>
+          <li><span>5.6</span>Working around AI video limitations</li>
+        </ol>
+      </details>
+      <details class="cc-module" id="m6">
+        <summary><span class="cc-no">06</span><span class="cc-title">How to Generate Audio with AI?</span><span class="cc-count">6 lessons</span><svg class="cc-plus" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 3v14M3 10h14" /></svg></summary>
+        <ol class="cc-lessons">
+          <li><span>6.1</span>Creating realistic AI voiceovers</li>
+          <li><span>6.2</span>Voice cloning: Scaling your own voice</li>
+          <li><span>6.3</span>Generating music for your edits</li>
+          <li><span>6.4</span>Creating sound effects and ambience</li>
+          <li><span>6.5</span>Dubbing and translation with AI</li>
+          <li><span>6.6</span>Cleaning and enhancing audio</li>
+        </ol>
+      </details>
+      <details class="cc-module" id="m7">
+        <summary><span class="cc-no">07</span><span class="cc-title">How to Edit with AI?</span><span class="cc-count">6 lessons</span><svg class="cc-plus" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 3v14M3 10h14" /></svg></summary>
+        <ol class="cc-lessons">
+          <li><span>7.1</span>What to give AI vs. what to keep creative control over</li>
+          <li><span>7.2</span>AI-assisted rough cuts and assembly</li>
+          <li><span>7.3</span>Editing videos like documents with text-based editing</li>
+          <li><span>7.4</span>Creating captions that match your style</li>
+          <li><span>7.5</span>Turning long-form content into shorts</li>
+          <li><span>7.6</span>AI-powered cleanup and finishing touches</li>
+        </ol>
+      </details>
+      <details class="cc-module" id="m8">
+        <summary><span class="cc-no">08</span><span class="cc-title">Creating Responsibly with AI</span><span class="cc-count">4 lessons</span><svg class="cc-plus" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 3v14M3 10h14" /></svg></summary>
+        <ol class="cc-lessons">
+          <li><span>8.1</span>Creator credibility in the AI era</li>
+          <li><span>8.2</span>Bias, misinformation, and hallucinations</li>
+          <li><span>8.3</span>Deepfakes, voice cloning, and IP</li>
+          <li><span>8.4</span>Staying human in an AI-powered world</li>
+        </ol>
+      </details>
+    </div>
+  </section>
+
+  <section class="wrap cc-end">
+    <div class="cc-panel">
+      <h2>Take the curriculum with you</h2>
+      <p class="cc-lead">Get the full 8-page curriculum as a PDF to read offline or share.</p>
+      <a class="cc-btn" href="/course-curriculum/ai-for-content-creation-curriculum.pdf"
+         download="AI for Content Creation - Course Curriculum.pdf">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        Download curriculum (PDF)
+      </a>
+    </div>
+  </section>
+</main>
+
+<script>
+  // A roadmap card links to its module; open it so the lessons show on arrival.
+  function openFromHash() {
+    var el = location.hash && document.querySelector('details' + location.hash);
+    if (el) el.open = true;
+  }
+  window.addEventListener('hashchange', openFromHash);
+  openFromHash();
+</script>
+</body>
+</html>

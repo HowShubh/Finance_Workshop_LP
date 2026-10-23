@@ -1,11 +1,15 @@
-# Only the landing page is open to search engines. Everything else is
-# closed by the catch-all Disallow below, without being named here, so
-# this file does not point anyone at pages that are not meant to be found.
-# The page's stylesheets, scripts and images stay open so it can be
-# rendered properly.
+# Open to search engines and AI assistants: the landing page, the course
+# curriculum, the policies and llms.txt. Everything else (post-checkout
+# pages) is closed by the catch-all Disallow below without being named
+# here, so this file does not point anyone at pages not meant to be
+# found. Stylesheets, scripts and images stay open so pages render.
 User-agent: *
 Allow: /$
 Allow: /index.html$
+Allow: /course-curriculum
+Allow: /privacy
+Allow: /terms
+Allow: /llms.txt
 Allow: /assets/
 Allow: /*.css$
 Allow: /*.js$

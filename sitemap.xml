@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Only the landing page is listed. /leoto, /tyle and /tybundle are
-     post-checkout pages and carry noindex, so they stay out of here. -->
+<!-- Public pages only. The post-checkout pages carry noindex and stay
+     out of here. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://finance.kkcreate.in/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://finance.kkcreate.in/course-curriculum/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://finance.kkcreate.in/privacy</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://finance.kkcreate.in/terms</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
 </urlset>

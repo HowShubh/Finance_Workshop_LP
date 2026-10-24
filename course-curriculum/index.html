@@ -37,6 +37,11 @@
   "name": "KK Create",
   "url": "https://kkcreate.in"
  },
+ "offers": {
+  "@type": "Offer",
+  "category": "Paid",
+  "url": "https://learn.kkcreate.in/web/checkout/69d1ffe81ee0d5b55ae2dc14"
+ },
  "syllabusSections": [
   {
    "@type": "Syllabus",
@@ -117,11 +122,18 @@
   .cc-stats b { color: var(--lime-soft); font-weight: 700; }
   .cc-btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    width: min(100%, 380px); padding: 16px 28px; border-radius: 14px;
+    width: min(100% - 8px, 380px); padding: 16px 28px; border-radius: 14px;
     background: var(--lime); color: var(--panel); font-weight: 700; font-size: 17px; text-decoration: none;
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28); transition: transform 0.15s ease, background-color 0.15s ease;
+    margin: 6px 4px; vertical-align: middle;
   }
   .cc-btn:hover { background: #b8ef3a; color: var(--panel); transform: translateY(-2px); }
+  /* The download sits under the enroll button as the quieter choice. */
+  .cc-btn-ghost {
+    background: transparent; color: #fff; box-shadow: none;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+  }
+  .cc-btn-ghost:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
   .cc-alt { display: block; margin-top: 14px; font-size: 13.5px; color: var(--on-panel-muted-2); }
   .cc-alt:hover { color: var(--on-panel-muted); }
 
@@ -205,10 +217,14 @@
         <li><b>50</b> lessons</li>
         <li>Ideation &rarr; Final edit</li>
       </ul>
-      <a class="cc-btn" href="/course-curriculum/ai-for-content-creation-curriculum.pdf"
+      <a class="cc-btn" href="https://learn.kkcreate.in/web/checkout/69d1ffe81ee0d5b55ae2dc14" data-buy>
+        Enroll in the course
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+      </a>
+      <a class="cc-btn cc-btn-ghost" href="/course-curriculum/ai-for-content-creation-curriculum.pdf"
          download="AI for Content Creation - Course Curriculum.pdf">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-        Download curriculum (PDF)
+        Download PDF
       </a>
       <a class="cc-alt" href="/course-curriculum/ai-for-content-creation-curriculum.pdf" target="_blank" rel="noopener">Open in a new tab &rarr;</a>
     </div>
@@ -334,12 +350,16 @@
 
   <section class="wrap cc-end">
     <div class="cc-panel">
-      <h2>Take the curriculum with you</h2>
-      <p class="cc-lead">Get the full 8-page curriculum as a PDF to read offline or share.</p>
-      <a class="cc-btn" href="/course-curriculum/ai-for-content-creation-curriculum.pdf"
+      <h2>Ready to create with AI?</h2>
+      <p class="cc-lead">Enroll in the course, or take the full 8-page curriculum with you as a PDF.</p>
+      <a class="cc-btn" href="https://learn.kkcreate.in/web/checkout/69d1ffe81ee0d5b55ae2dc14" data-buy>
+        Enroll in the course
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+      </a>
+      <a class="cc-btn cc-btn-ghost" href="/course-curriculum/ai-for-content-creation-curriculum.pdf"
          download="AI for Content Creation - Course Curriculum.pdf">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-        Download curriculum (PDF)
+        Download PDF
       </a>
     </div>
   </section>

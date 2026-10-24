@@ -35,6 +35,7 @@ Lokesh Yadav left the Indian Audit and Accounts Service at 27 to co-found KK Cre
 
 - [AI for Content Creation — course curriculum](https://finance.kkcreate.in/course-curriculum/): 8 modules and 50 lessons, from ideation to the final edit (using AI, ideation, research and scripting, images, video, audio, editing, creating responsibly).
 - [Curriculum PDF](https://finance.kkcreate.in/course-curriculum/ai-for-content-creation-curriculum.pdf)
+- [Enroll in AI for Content Creation](https://learn.kkcreate.in/web/checkout/69d1ffe81ee0d5b55ae2dc14): checkout for the course.
 
 ## Policies
 

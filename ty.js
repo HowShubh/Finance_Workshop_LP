@@ -1,12 +1,11 @@
 /* Thank-you page (/tyle) for the Learn to Earn Through Content
-   live workshop: link wiring with UTM passthrough, the one-time-offer
+   recorded workshop: link wiring with UTM passthrough, the one-time-offer
    countdown and the referral copy button.
 
    Everything below no-ops when its markup is absent. */
 
 const TY = {
-  // WhatsApp community. Updates, the joining link, the recording when it
-  // lands, and Q&A.
+  // WhatsApp community. Updates, bonuses and Q&A.
   // Learn to Earn Through Content community group.
   whatsappUrl: 'https://chat.whatsapp.com/FXlwF0YX7AXBEQpiAA0r30',
 

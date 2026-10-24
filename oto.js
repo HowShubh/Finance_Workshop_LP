@@ -1,5 +1,5 @@
 /* One-time-offer page (/leoto): the Complete Creator Package, offered
-   after the Learn to Earn Through Content live workshop checkout.
+   after the Learn to Earn Through Content recorded workshop checkout.
 
    The page quotes no price of its own — the amount is shown at checkout,
    so a price change never means editing markup here. The offer strip on

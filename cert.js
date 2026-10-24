@@ -28,6 +28,16 @@
   if (window.ResizeObserver) new ResizeObserver(fit).observe(stage);
   fit();
 
+  /* ---------- Date ----------
+     The workshop is watched as a recording, so the pass is dated the day
+     it is made rather than one fixed session date. */
+  const dateEl = cert.querySelector('[data-cert-date]');
+  if (dateEl) {
+    dateEl.textContent = new Date()
+      .toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })
+      .replace(/Sept/, 'Sep').toUpperCase();
+  }
+
   /* ---------- QR to the landing page ---------- */
   const qrBox = cert.querySelector('[data-cert-qr]');
   if (qrBox && window.qrcode) {

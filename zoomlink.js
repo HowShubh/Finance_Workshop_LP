@@ -17,12 +17,6 @@ const LIVE = {
   // Set true once assets/live-qr.svg encodes joinUrl.
   hasQr: true,
 
-  /* The WhatsApp group. The link is sent there as well as appearing on this
-     page, so the waiting panel names it — and while this is empty the button
-     goes rather than sitting there pointing at nothing.
-
-     Same group as TY.whatsappUrl in ty.js. Set both. */
-  whatsappUrl: 'https://chat.whatsapp.com/FXlwF0YX7AXBEQpiAA0r30',
 
   // Session start, as UTC: 24 Oct 2026, 12:00 PM IST.
   startsAt: Date.UTC(2026, 9, 24, 6, 30, 0),
@@ -51,20 +45,6 @@ function applyLink() {
   }
 }
 
-/* The group invite is the one thing on this page that can be acted on
-   before the day, so it stays visible after the join button appears. */
-function applyWhatsApp() {
-  const btn = document.querySelector('[data-wa]');
-  if (!btn) return;
-  if (!LIVE.whatsappUrl) {
-    btn.hidden = true;
-    return;
-  }
-  btn.href = LIVE.whatsappUrl;
-  btn.target = '_blank';
-  btn.rel = 'noopener';
-  btn.hidden = false;
-}
 
 /* ---------- Countdown ---------- */
 
@@ -99,7 +79,7 @@ function initCountdown() {
     box.hidden = true;
     if (title) {
       title.textContent = now < endsAt
-        ? 'We are live right now — come on in.'
+        ? 'We are live on Zoom right now. Tap the button to join.'
         : 'This session has finished. The recording is sent to you within 24–48 hours.';
     }
     clearInterval(timer);
@@ -110,5 +90,4 @@ function initCountdown() {
 }
 
 applyLink();
-applyWhatsApp();
 initCountdown();
